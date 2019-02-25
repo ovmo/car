@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_162508) do
+ActiveRecord::Schema.define(version: 2019_02_25_170411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_162508) do
   create_table "renters", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
-    t.string "email"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,7 +52,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_162508) do
     t.string "first_name"
     t.string "last_name"
     t.string "company"
-    t.string "email"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

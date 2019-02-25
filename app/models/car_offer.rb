@@ -7,5 +7,4 @@ class CarOffer < ApplicationRecord
   validates :horsepower, presence: true, allow_blank: false, allow_nil: false
   validates :price, presence: true, allow_blank: false, allow_nil: false
   validates :description, presence: true, allow_blank: false, allow_nil: false
-  validates :seller, presence: true, allow_blank: false, allow_nil: false
 end

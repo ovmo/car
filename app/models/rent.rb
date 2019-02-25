@@ -3,6 +3,4 @@ class Rent < ApplicationRecord
   belongs_to :renter
   validates :start_date, presence: true, allow_blank: false, allow_nil: false
   validates :end_date, presence: true, allow_blank: false, allow_nil: false
-  validates :renter, presence: true, allow_blank: false, allow_nil: false
-  validates :car_offer, presence: true, allow_blank: false, allow_nil: false
 end
