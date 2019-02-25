@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_134747) do
+ActiveRecord::Schema.define(version: 2019_02_25_162508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "car_offers", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.string "title"
+    t.integer "horsepower"
+    t.integer "price"
+    t.text "description"
+    t.bigint "seller_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seller_id"], name: "index_car_offers_on_seller_id"
+  end
+
+  create_table "renters", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_renters_on_user_id"
+  end
+
+  create_table "rents", force: :cascade do |t|
+    t.bigint "car_offer_id"
+    t.bigint "renter_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_offer_id"], name: "index_rents_on_car_offer_id"
+    t.index ["renter_id"], name: "index_rents_on_renter_id"
+  end
+
+  create_table "sellers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "company"
+    t.string "email"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sellers_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,4 +81,9 @@ ActiveRecord::Schema.define(version: 2019_02_25_134747) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "car_offers", "sellers"
+  add_foreign_key "renters", "users"
+  add_foreign_key "rents", "car_offers"
+  add_foreign_key "rents", "renters"
+  add_foreign_key "sellers", "users"
 end
