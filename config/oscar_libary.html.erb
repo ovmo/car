@@ -1,0 +1,70 @@
+<!-- INDEX -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-10 offset-sm-1">
+      <h1>All cars</h1>
+      <ul class="list-group">
+        <% @cars.each do |car| %>
+          <li class="list-group-item">
+            <%= link_to car.name, car_path(car) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- NEW -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Add a car to the Renting fleet</h1>
+      <%= simple_form_for @car do |f| %>
+        <%= f.input :title %>
+        <%= f.input :brand %>
+        <%= f.input :model %>
+        <%= f.input :horsepower %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SHOW -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-10 offset-sm-1">
+      <h1><%= @car.model %></h1>
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Price</th>
+            <td>€<%= @car.price %></td>
+          </tr>
+          <tr>
+            <th scope="row">Owner</th>
+            <td><%= @car.seller.first_name %> <%= @car.seller.last_name.first %>.</td>
+          </tr>
+          <tr>
+            <th scope="row">BRAND</th>
+            <td><%= @car.brand %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <p><%= car.description %></p>
+      </div>
+
+      <%= link_to "See all cars", cars_path %>
+    </div>
+  </div>
+</div>
