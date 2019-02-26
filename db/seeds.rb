@@ -7,16 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
-CarOffer.destroy_all
+# CarOffer.destroy_all
 
 
-CarOffer.create(brand: "Porsche")
-CarOffer.create(model: "Carrera 4S")
-CarOffer.create(title: "Brand new Porsche 992 Carrera 4S")
-CarOffer.create(horsepower: "450")
-CarOffer.create(price: "135.000€")
-CarOffer.create(description: "Der neue 911 ist die Summe seiner Vorgänger – und damit sowohl Retrospektive als auch Zukunftsvision. Die Silhouette: ikonisch. Das Design: zeitlos. Die Technologie: inspiriert von großen Rennsiegen und immer eine Idee voraus. Mit der 8. Generation des 911 fahren wir weiter Richtung Zukunft.")
-
+new_car = CarOffer.new(brand: "Porsche", model: "Carrera 4S", title: "Brand new Porsche 992 Carrera 4S", horsepower: "450", price: "135.000€", description: "Der neue 911 ist die Summe seiner Vorgänger – und damit sowohl Retrospektive als auch Zukunftsvision. Die Silhouette: ikonisch. Das Design: zeitlos. Die Technologie: inspiriert von großen Rennsiegen und immer eine Idee voraus. Mit der 8. Generation des 911 fahren wir weiter Richtung Zukunft.")
+new_car.save
 
 
 puts "Finished!"
