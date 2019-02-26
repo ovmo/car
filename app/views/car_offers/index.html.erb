@@ -1,15 +1,15 @@
-
- <div class="container">
+<div class="container">
     <div class="row">
     <% @car_offers.each do |car| %>
-
-        <div class="col-xs-12 col-sm-6 col-md-4 card-category", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))>
-        <%= link_to "#{car.brand} #{car.model} - #{car.title}",  car_offers_path(car)  %>
-        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+      <%= link_to car_offer_path(car) do %>
+          <div class="card">
+            <%= cl_image_tag("rz359fppbjbpmwjpxloq.jpg", class: "card-img-top") %>
+              <%= link_to "#{car.brand} #{car.model} - #{car.title}", car_offer_path(car), class: "px-4 py-3" %>
+          </div>
         <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
 </div>
 
-
-
-</div>

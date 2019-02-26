@@ -1,9 +1,21 @@
 <div class="headers-landing-page">
-<h1>LUXURY CARS</h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path("gabriel-gurrola-125352-unsplash.jpg", :height=>900,
+         :crop=>"fit") %>');width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
+         background-size: cover;">
+    <div class="container">
+      <h1 class="pt-5" style="color: rgba(255,255,255,0.7);">Rent a <strong>special car</strong> via <strong>LUXCAR</strong>!</h1>
+
+      <%= link_to "Take a look",car_offers_path, class:"btn btn-info" %>
+    </div>
+  </div>
+<!-- <h1>LUXURY CARS</h1>
 <h3> MUC | HAM | BLN</h3>
 </div>
 <div class="take-a-look-btn-landing-page">
-<%= link_to "Take a look", (render 'post_home'), class:"btn btn-primary" %>
+<%= link_to "Take a look",  class:"btn btn-primary" %>
 </div>
 
-<%= render 'post_home' %>
+
+ -->
+ <%= render 'post_home' %>
