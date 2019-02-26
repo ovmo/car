@@ -3,8 +3,9 @@
     <div class="row">
     <% @car_offers.each do |car| %>
 
-        <div class="col-xs-12 col-sm-6 col-md-4 card-category", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= car_offer.URL %>)">
+        <div class="col-xs-12 col-sm-6 col-md-4 card-category", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))>
 
+              <%= cl_image_tag("rz359fppbjbpmwjpxloq.jpg", :quality=>97) %>
 
         <%= link_to car.name,  car_offers_path(car_offer)  %>
         </div>
