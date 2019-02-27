@@ -1,0 +1,23 @@
+.card-category {
+  // background-size: cover;
+  // background-position: center;
+  height:80px;
+  // padding-top: 20;
+  // padding-bottom: 20;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding-left: 2em;
+  color: white;
+  font-size: 24px;
+  // font-weight: lighter;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // border-top-right-radius: 5px;
+  // border-top-left-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-show {
+  background-color: black;
+}
