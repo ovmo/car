@@ -1,13 +1,24 @@
 <%= render 'shared/navbar2' %>
-<div class="container-fluid">
+<div class="container-fluid delete-navbar-margin">
   <div class="row">
-    <h1><%= @car_offer.brand %></h1>
+    <div class="card-category card-show">
+      <%= @car_offer.brand %>
+      <%= @car_offer.model  %>
+    </div>
     <div class="banner-image-cars"></div>
   </div>
 </div>
 <div class="container">
-  <h3 class="mt-5 ml-3"><%= @car_offer.title %></h3>
+  <h3 class="mt-5"><%= @car_offer.title %></h3>
   <div class="row">
     <p><%= @car_offer.description %></p>
   </div>
+  <hr>
+  <div class="d-flex justify-content-between mt-5 align-items-center">
+    <p class="flex-item-center-margin">
+      <%= "Horsepower: #{@car_offer.horsepower}"  %>
+    </p>
+    <%= link_to "#{@car_offer.price} € a day", "#", class: "btn btn-info btn-flat" %>
+  </div>
 </div>
+<div class="move-page-up"></div>

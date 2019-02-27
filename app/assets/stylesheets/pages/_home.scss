@@ -10,6 +10,6 @@
 .banner-image-cars{
   background-image: url("https://res.cloudinary.com/ddf9uu7pe/image/upload/v1551178064/rz359fppbjbpmwjpxloq.jpg");
   background-position: center;
-  height: 90vh;
+  height: calc(100vh - 160px);
   width: 100%;
 }
