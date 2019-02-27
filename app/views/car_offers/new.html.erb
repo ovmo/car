@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url(<%= image_url("525744044.jpg") %>);width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
+         url(<%= image_url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Download-HD-Car-Wallpapers.jpg") %>);width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
          background-size: cover;">
   <div>
       <div class="create-new-car-form" style="width:50vh;">
@@ -11,7 +11,10 @@
           <%= f.input :price %>
           <%= f.input :description %>
           <%= f.submit "Add Car to the fleet", class: "btn btn-primary" %>
+         <%= link_to car_offers_path do %>
+         <p>Go back to list</p>
       <% end %>
+      <% end  %>
     </div>
   </div>
 </div>

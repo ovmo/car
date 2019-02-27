@@ -1,5 +1,5 @@
 class CarOffer < ApplicationRecord
-  belongs_to :seller
+  belongs_to :seller, class_name: 'User'
   has_many :rents
   validates :brand, presence: true, allow_blank: false, allow_nil: false
   validates :model, presence: true, allow_blank: false, allow_nil: false

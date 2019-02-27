@@ -14,7 +14,14 @@ class CarOffersController < ApplicationController
 
   def create
     @car_offer = CarOffer.new(car_offer_params)
-    @car_offer.seller = current_user
+    @car_offer.seller_id = current_user.seller.id
+    @car_offer.save
+
+    if @car_offer.save
+      redirect_to car_offers_path
+    else
+      render 'new'
+    end
   end
 
   private
