@@ -12,7 +12,7 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.navbar-brand {
   height: 50px;
 }
 
@@ -97,4 +97,17 @@
 
 .navbar-fixed-hide {
   height:80px;
+}
+
+.navbar-logo {
+  color: black;
+  font-weight:bold;
+  font-size: 2em;
+  padding-left: 0.6em;
+  text-decoration: none
+}
+
+.navbar-logo:hover {
+  text-decoration: none;
+  color: #da552f
 }
