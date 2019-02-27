@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_170411) do
+ActiveRecord::Schema.define(version: 2019_02_27_121832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,14 @@ ActiveRecord::Schema.define(version: 2019_02_25_170411) do
 
   create_table "rents", force: :cascade do |t|
     t.bigint "car_offer_id"
-    t.bigint "renter_id"
+    t.bigint "user_id"
+    t.integer "price_total"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_offer_id"], name: "index_rents_on_car_offer_id"
-    t.index ["renter_id"], name: "index_rents_on_renter_id"
+    t.index ["user_id"], name: "index_rents_on_user_id"
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -74,6 +75,10 @@ ActiveRecord::Schema.define(version: 2019_02_25_170411) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.boolean "seller", default: false
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "deleted", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
@@ -82,6 +87,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_170411) do
   add_foreign_key "car_offers", "sellers"
   add_foreign_key "renters", "users"
   add_foreign_key "rents", "car_offers"
-  add_foreign_key "rents", "renters"
+  add_foreign_key "rents", "users"
   add_foreign_key "sellers", "users"
 end
