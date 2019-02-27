@@ -1,10 +1,17 @@
-<%= simple_form_for(@car_offer) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :brand %>
-    <%= f.input :model %>
-    <%= f.input :horsepower %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.submit "Add Car to the fleet" %>
-<% end %>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= image_url("525744044.jpg") %>);width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
+         background-size: cover;">
+  <div>
+      <div class="create-new-car-form" style="width:50vh;">
+        <%= simple_form_for(@car_offer)  do |f| %>
+          <%= f.input :title %>
+          <%= f.input :brand %>
+          <%= f.input :model %>
+          <%= f.input :horsepower %>
+          <%= f.input :price %>
+          <%= f.input :description %>
+          <%= f.submit "Add Car to the fleet", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
