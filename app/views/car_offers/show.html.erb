@@ -21,4 +21,16 @@
     <%= link_to "#{@car_offer.price} € a day", "#", class: "btn btn-info btn-flat" %>
   </div>
 </div>
+<div>
+      <div class="create-new-car-form" style="width:50vh;">
+        <%= simple_form_for([@car_offer, @rent])  do |f| %>
+          <%= f.input :start_date%>
+          <%= f.input :end_date %>
+          <%= f.submit "Rent car", class: "btn btn-primary" %>
+         <%= link_to root_path do %>
+      <% end %>
+      <% end  %>
+    </div>
+  </div>
 <div class="move-page-up"></div>
+

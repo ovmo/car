@@ -1,0 +1,18 @@
+<%= render 'shared/navbar2' %>
+<div>
+  <h3 style="font-weight: 200;">Your bookings:</h3>
+  <div id= 'test_div'>
+    <% @rents.each do |rent| %>
+    <div class="container-fluid ">
+      <div class="col-md-12 test_css_style">
+        <div class="card card2">
+          <p> Car id: <%= rent.car_offer_id %></p>
+          <p> From: <%= rent.start_date %></p>
+          <p> Till: <%= rent.end_date %></p>
+          <p><%= rent.price_total %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
