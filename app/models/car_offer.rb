@@ -1,5 +1,5 @@
 class CarOffer < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :rents
   # include AlgoliaSearch
 
