@@ -1,21 +1,65 @@
 <div class="headers-landing-page">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path("gabriel-gurrola-125352-unsplash.jpg", :height=>900,
-         :crop=>"fit") %>');width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
+  <div class="banner d-flex flex-column justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path("gabriel-gurrola-125352-unsplash.jpg", :height=>900, :crop=>"fit") %>');width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
          background-size: cover;">
-    <div class="container">
-      <h1 class="pt-5" style="color: rgba(255,255,255,0.7);">Rent a <strong>special car</strong> via <strong>LUXCAR</strong>!</h1>
-
-      <%= link_to "Take a look",car_offers_path, class:"btn btn-info" %>
+    <div class="d-flex flex-column h-100 align-items-center" style="padding-top: 159px;">
+      <h1 class="pt-5 headline" style="color: rgba(255,255,255,0.7);">Rent a <strong>special car</strong> via <strong>LUXCAR</strong>!</h1>
+      <%= link_to "Take a look",car_offers_path, class:"btn btn-info home-cta" %>
+    </div>
+    <div class="arrow">
+      <%= image_tag "Arrowdown.png" %>
     </div>
   </div>
-<!-- <h1>LUXURY CARS</h1>
-<h3> MUC | HAM | BLN</h3>
-</div>
-<div class="take-a-look-btn-landing-page">
-<%= link_to "Take a look",  class:"btn btn-primary" %>
-</div>
 
-
- -->
  <%= render 'post_home' %>
+
+
+ <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" style="background-color:aliceblue">
+   <div class="carousel-inner" style="margin-bottom: 60px; margin-top: 60px;">
+     <div class="carousel-item active" data-interval="2000">
+       <div class="d-flex flex-row justify-content-between">
+         <div>
+            <%= link_to car_offers_path do %>
+              <%= image_tag "Porsche.png", width: 500, height: 300 %>
+            <% end %>
+         </div>
+         <div>
+            <%= link_to car_offers_path do %>
+           <%= image_tag "Lambo.png", width: 250, height: 300 %>
+            <% end %>
+         </div>
+         <div>
+            <%= link_to car_offers_path do %>
+           <%= image_tag "Ferrari.png", width: 500, height: 300 %>
+            <% end %>
+         </div>
+       </div>
+     </div>
+     <div class="carousel-item" data-interval="2000">
+     <div class="d-flex flex-row justify-content-between">
+      <div>
+          <%= link_to car_offers_path do %>
+        <%= image_tag "Bugatti.png", width: 400, height: 250 %>
+         <% end %>
+      </div>
+      <div>
+          <%= link_to car_offers_path do %>
+        <%= image_tag "Tesla.png", width: 250, height: 300 %>
+         <% end %>
+      </div>
+      <div>
+          <%= link_to car_offers_path do %>
+        <%= image_tag "McLaren.png", width: 450, height: 300 %>
+         <% end %>
+      </div>
+     </div>
+   </div>
+ </div>
+   <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+   </a>
+ </div>
