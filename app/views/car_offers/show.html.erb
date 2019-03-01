@@ -5,7 +5,7 @@
       <%= @car_offer.brand %>
       <%= @car_offer.model  %>
     </div>
-    <div class="banner-image-cars"></div>
+    <div class="banner-image-cars" style='background-image: url(<%= cl_image_path @car_offer.photo, crop: :fill; %>)'></div>
   </div>
 </div>
 <div class="container">
@@ -18,15 +18,15 @@
     <p class="flex-item-center-margin">
       <%= "Horsepower: #{@car_offer.horsepower}"  %>
     </p>
-    <%= link_to "#{@car_offer.price} € a day", "#", class: "btn btn-info btn-flat" %>
+    <%= link_to "#{@car_offer.price} € a day", "#car", class: "btn btn-info btn-flat" %>
   </div>
 </div>
 <div>
-      <div class="create-new-car-form" style="width:50vh;">
+      <div class="create-new-car-form" id="car" style="width:50vh;">
         <%= simple_form_for([@car_offer, @rent])  do |f| %>
           <%= f.input :start_date%>
           <%= f.input :end_date %>
-          <%= f.submit "Rent car", class: "btn btn-primary" %>
+          <%= f.submit "Rent this car for €#{@car_offer.price} a day", class: "btn btn-info btn-flat" %>
          <%= link_to root_path do %>
       <% end %>
       <% end  %>

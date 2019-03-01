@@ -1,18 +1,20 @@
 <%= render 'shared/navbar2' %>
-<div>
-  <h3 style="font-weight: 200;">Your bookings:</h3>
-  <div id= 'test_div'>
+<div class="container">
+  <h3 style="font-weight: 200" class="mx-auto my-3 text-center">Your bookings:</h3>
+  <div id='test_div' class="row">
     <% @rents.each do |rent| %>
-    <div class="container-fluid ">
-      <div class="col-md-12 test_css_style">
-        <div class="card card2">
-          <p> Car id: <%= rent.car_offer_id %></p>
+    <!-- <div class="container-fluid "> -->
+      <div class="col-12 col-sm-6">
+        <div class="card card2 py-3">
+          <p> Car:
+            <%= link_to "#{rent.car_offer.brand} #{rent.car_offer.model}", car_offer_path(rent.car_offer)  %>
+          </p>
           <p> From: <%= rent.start_date %></p>
           <p> Till: <%= rent.end_date %></p>
-          <p><%= rent.price_total %></p>
+          <p> Total Price for the rent: €<%= rent.price_total %></p>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
     <% end %>
   </div>
 </div>
