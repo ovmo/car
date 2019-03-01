@@ -1,20 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url(<%= image_url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Download-HD-Car-Wallpapers.jpg") %>);width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
-         background-size: cover;">
+  url(<%= image_url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Download-HD-Car-Wallpapers.jpg") %>);width:100vw; height:100vh; background-repeat: no-repeat; background-position: center;
+  background-size: cover;">
   <div>
-      <div class="create-new-car-form" style="width:50vh;">
-        <%= simple_form_for(@car_offer)  do |f| %>
-          <%= f.input :title %>
-          <%= f.input :brand %>
-          <%= f.input :model %>
-          <%= f.input :horsepower %>
-          <%= f.input :price %>
-          <%= f.input :description %>
-          <%= f.submit "Add Car to the fleet", class: "btn btn-primary" %>
-         <%= link_to car_offers_path do %>
-         <p>Go back to list</p>
-      <% end %>
+    <div class="create-new-car-form" style="width:50vh;">
+      <%= simple_form_for(@car_offer)  do |f| %>
+        <%= f.input :title %>
+        <%= f.input :brand, collection: ['Bugatti', 'Ferrari', 'Lamborghini', 'McLaren',  'Porsche',  'Tesla'] %>
+        <%= f.input :model %>
+        <%= f.input :horsepower %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :photo, class: "btn btn-flat btn-info" %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Add Car to the fleet", class: "btn btn-flat btn-info" %>
       <% end  %>
+    </div>
+    <div class="container">
+      <div class="mx-auto text-center mt-5">
+        <%= link_to car_offers_path, class: "btn-flat btn btn-outline-info" do %>
+          <p class="flex-item-center-margin">Go back to list</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

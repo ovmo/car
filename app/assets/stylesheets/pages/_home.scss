@@ -8,8 +8,10 @@
 }
 
 .banner-image-cars{
-  background-image: url("https://res.cloudinary.com/ddf9uu7pe/image/upload/v1551178064/rz359fppbjbpmwjpxloq.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
+  background-size: auto;
   height: calc(100vh - 160px);
   width: 100%;
 }
